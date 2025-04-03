@@ -1,0 +1,85 @@
+/* Full page container */
+.home-container {
+    text-align: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.top-nav a:hover {
+    color: #ff6bcb;
+}
+
+/* App Name */
+.app-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Scrolling Songs */
+.scrolling-songs {
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Wrapper for scrolling animation */
+.songs-wrapper {
+    display: flex;
+    gap: 20px;
+    animation: scrollSongs 10s linear infinite;
+}
+
+/* Song card */
+.song-card {
+    display: inline-block;
+    background: #171717;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.song-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.song-info h3 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.song-info p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Scrolling animation */
+@keyframes scrollSongs {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}

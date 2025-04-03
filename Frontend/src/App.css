@@ -1,0 +1,215 @@
+/* ======= Global Styles ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ======= Blurred Background Effect ======= */
+body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Apply a blurred background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.pinimg.com/736x/9f/a9/c7/9fa9c7221dafe11c5e1453e3bef409c2.jpg') no-repeat center center/cover;
+    filter: blur(10px);  /* Adjust blur intensity */
+    z-index: -1;
+}
+  
+  /* Make background responsive */
+  @media (max-width: 768px) {
+    .app-container {
+      background-size: contain; /* Adjust for mobile */
+    }
+  }
+  
+
+/* Ensuring app-container remains sharp */
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+.auth-box {
+    width: 700px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.auth-box h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+}
+
+.auth-box input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    background: #ff6bcb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    transition: background 0.3s;
+}
+
+.auth-box button:hover {
+    background: #e85fb8;
+}
+
+.auth-box p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-box a {
+    color: #6e8efb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-box a:hover {
+    text-decoration: underline;
+}
+
+/* ======= Dashboard Styling ======= */
+.dashboard {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to right, #2a2a72, #009ffd);
+    color: white;
+}
+
+.sidebar {
+    width: 250px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.songs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.song-card {
+    width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.song-card:hover {
+    transform: scale(1.05);
+}
+
+.song-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+}
+
+.song-info {
+    margin-top: 10px;
+}
+
+/* ======= Music Player Styling ======= */
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.player audio {
+    width: 300px;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .songs-list {
+        justify-content: center;
+    }
+}

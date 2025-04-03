@@ -1,0 +1,116 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #121212;
+}
+
+.sidebar {
+  width: 250px;
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.user-info {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 20px;
+}
+
+.user-info svg {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: #888;
+  text-decoration: none;
+  border-radius: 20px;
+  margin: 5px 0;
+  transition: all 0.2s;
+}
+
+nav a:hover {
+  background: #333;
+  color: #fff;
+}
+
+nav a.active {
+  background: #1db954;
+  color: #fff;
+}
+
+nav a svg {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 20px;
+  color: white;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.welcome-message h2 {
+  color: #1db954;
+  margin-bottom: 10px;
+}
+
+.welcome-message p {
+  color: #888;
+}
+
+.song-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.error {
+  text-align: center;
+  color: #ff4444;
+  padding: 20px;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .song-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
